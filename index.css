@@ -1,0 +1,203 @@
+html, body{
+ width: 100%;
+ height: 100%;
+ padding: 0;
+ margin: 0px;
+background-image: url(earth.jpg); 
+background-size: 100%;
+ overflow-x: hidden;
+}
+
+*{
+	 /*border: 1px solid;*/
+}
+
+
+
+
+
+
+.toggle_btn{
+	height: 30px;
+	width: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+	margin-right: 10px;
+	margin-top:5px;
+	cursor: pointer
+	z-index: 1000;
+	
+}
+
+.toggle_btn span{
+	height: 3px;
+	background-color: white;
+	width:100%;
+	border-radius: 30px;
+	position: absolute;
+	top: 20px;
+	left: 0;
+	z-index: 1000;
+
+
+
+}
+
+.toggle_btn span:before{
+	content: '';
+	height: 3px;
+	background-color: white;
+	width:60%;
+	border-radius: 30px;
+	position: absolute;
+	top: -10px;
+	left: 0;
+}
+
+
+.toggle_btn span:after{
+	content: '';
+	height: 3px;
+	border-radius: 30px;
+	background-color: white;
+	width:100%;
+	position: absolute;
+	top: 10px;
+	left: 0;
+
+}
+
+
+
+
+
+.menu{
+	height: 100%;
+	background-color: rgba(255,255,255, 1);
+	width: 140px;
+	position: absolute;
+	z-index: 999;
+
+
+}
+
+.menu a {
+	color: green;
+	font-family: ubuntu,sans-serif;
+	font-size: 15px;
+	text-align: center;
+	display: block;
+	padding-top: 30px;
+	text-decoration: none;
+	
+
+}
+
+.logo{
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 24px;
+
+}
+
+
+
+.nav_open{
+	margin-left: 0;
+	transition-duration:0.7s;
+}
+
+.nav{
+	margin-left: -200px;
+	transition-duration: 0.5s;
+
+}
+
+.nav_open{
+	margin-left: 0;
+	transition-duration: 0.7s;
+
+
+}
+
+
+
+
+h1{
+	display: flex;
+	justify-content: center;
+	margin-top: 60px;
+	font-family: ubuntu;
+	color: white;
+}
+
+h2{
+	color: white;
+	font-family: ubuntu;
+	padding-right: 20px;
+}
+
+section{
+	margin-top: 100px;
+	margin-left: 200px;
+
+}
+
+
+#day{
+	width: 50px;
+}
+
+#month{
+	width: 50px;
+}
+
+#year{
+	width: 90px;
+}
+button{
+	background-color: green;
+	color: white;
+	border: none;
+	margin-left: 30px;
+}
+
+footer{
+	color: white;
+	margin-top: 80px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	font-size: 30px;
+	font-family: ubuntu;
+}
+
+.result{
+	color: white;
+	margin-top: 40px;
+	margin-left: 70px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	font-size: 30px;
+	font-family: ubuntu light;
+}
+
+#nb1{
+	color: orange;
+	background-color: white;
+	font-family: ubuntu;
+}
+
+#nb2{
+	color: green;
+	background-color: white;
+	font-family: ubuntu;
+}
+
+#nb3{
+	color: red;
+	background-color: white;
+	font-family: ubuntu;
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="description" content="Des voyages pas cher mis en place par airbnb pour voyager à londres,amsterdam,paris,barcelone et plein d'autres destinations à prix réduit">
+ <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+ <title>Sprint</title>
+ <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+	<div class="toggle_btn">
+      
+      <span></span>
+    </div>
+
+    <div class="menu nav">
+
+    <a href=index.html style="color: rgba ">Accueil</a>
+    <a href="Courbes.html">Courbes</a>
+    <a href="Prévention.html">Prévention</a>
+    <a href="Zones à risques.html">Zones à risques</a>
+    
+  </div>
+
+<header>
+
+	
+	<h1> Informations COVID-19 </h1>
+
+</header>
+
+<section>
+<label for="day"><h2>Date</h2></label>
+
+<input type="number" id="day" name="day"
+       min="01" max="31">
+
+       <label for="month"></label>
+
+<input type="number" id="month" name="month"
+       min="01" max="12">
+
+       <label for=" year"></label>
+
+<input type="number" id="year" name="year"
+       min="1900" max="2022">
+
+       <button id="ok">Valider</button>
+
+ </section>
+
+ <footer>
+ 	<div class="cas">Cas confirmés : </div>
+ 	<div class="guerris">Guerris :</div>
+ 	<div class="mort">Morts :</div>
+ </footer>
+
+ <div class="result">
+ 	<div id="nb1"> </div>
+ 	<div id="nb2"></div>
+ 	<div id="nb3"></div>
+ </div>
+
+
+    <script type="text/javascript">
+
+    	var btn = document.querySelector('.toggle_btn');
+var nav = document.querySelector('.nav');
+
+btn.onclick = function(){
+	nav.classList.toggle('nav_open');
+}
+
+
+    	let nb1=document.getElementById('nb1')
+    	let nb2=document.getElementById('nb2')
+    	let nb3=document.getElementById('nb3')
+
+
+		let day=document.getElementById('day')
+    	let month=document.getElementById('month')
+    	let year=document.getElementById('year')
+    	let ok=document.getElementById('ok')
+
+    	let _apiKey = "78a38fb784msh337965cbbd412efp121c4cjsn6a00ca40e71f";
+        let _params = "&units=metric";
+        let responseSpan = document.getElementById('inputCountry');
+
+        
+
+
+    	ok.addEventListener('click',function(){
+
+    		let annee=year.value+'-'+month.value+'-'+day.value;
+
+
+
+
+        
+       
+       
+         
+        fetch("https://covid-19-data.p.rapidapi.com/report/totals?date-format=YYYY-MM-DD&format=json&date="+annee, {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "covid-19-data.p.rapidapi.com",
+		"x-rapidapi-key": "78a38fb784msh337965cbbd412efp121c4cjsn6a00ca40e71f"
+	}
+})
+
+
+.then(response=>response.json())
+
+.then(response => {
+	nb1.innerText=response[0].confirmed
+	nb2.innerText=response[0].recovered
+	nb3.innerText=response[0].deaths
+
+	console.log(response);
+})
+.catch(err => {
+	console.log(err);
+});
+
+    	})
+    </script>
+</body>
+</html>
